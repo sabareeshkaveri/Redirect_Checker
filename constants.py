@@ -1,5 +1,6 @@
 import os
-
+from urllib.parse import quote
+# Constants for the Redirect Checker application
 author = "Sabareesh Kaveri"
 authorEmail    = "sabareeshkaveri@gmail.com"
 
@@ -21,13 +22,20 @@ time_out = 10  # Default timeout for requests in seconds
 allow_redirects = True  # Allow redirects by default
 is_proxy_required = False  # Default to no proxy required
 # Proxy settings
+proxy_url = "your_proxy"     # Replace with your actual proxy host
+proxy_port = "port"  # Replace with your actual proxy port
+proxy_userid = "your_username"  # Optional: Replace with your proxy username
+proxy_pass = "your_password"        # Optional: Replace with your proxy password
 
 if is_proxy_required:
+    proxy_url = quote(proxy_url) 
+    proxy_port = quote(proxy_port)
+    proxy_userid = quote(proxy_userid)
+    proxy_pass = quote(proxy_pass)  
+    proxy_encoded = f"http://{proxy_userid}:{proxy_pass}@{proxy_url}:{proxy_port}" if proxy_userid and proxy_pass else f"http://{proxy_url}:{proxy_port}"
     PROXY = {
-    "host": "your_proxy",  # Replace with your proxy host
-    "port": "port",  # Replace with your proxy port  
-    "username": "your_username",  # Optional: Replace with your proxy username
-    "password": "your_password"  # Optional: Replace with your proxy password
+        "http": proxy_encoded,
+        "https": proxy_encoded
 }
 else:
     # If no proxy is required, set empty strings
