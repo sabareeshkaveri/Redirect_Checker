@@ -25,7 +25,6 @@ project/
 - **Background**:
   - Proficient in Python and Tkinter, with experience in GUI development 
 - **Contribution**: Designed, developed, and debugged the Redirect Checker application, implementing features like CSV import, redirect validation, and HTML reporting.
-- **Contact**: [Insert preferred contact method, e.g., email or GitHub profile]
 
 ## Configurations
 
