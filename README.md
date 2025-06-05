@@ -36,6 +36,7 @@ project/
   - `requests`: For making HTTP requests to check URL redirects.
   - `jinja2`: For generating HTML reports using templates.
   - `Pillow`: For handling logo and icon images in the GUI.
+  - `tk`: Creating GUI setup using python.
 
 ### Install Dependencies
 
